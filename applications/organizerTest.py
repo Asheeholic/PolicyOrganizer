@@ -25,7 +25,9 @@ def analyze_txt(filename):
     
     print('analyze Test!!')
     # test
-    df = pd.read_csv(f'{upload_path}{filename}', encoding='utf-8')
+    df = pd.read_csv(f'{upload_path}{filename}', 
+                    sep='------------------------------------------------------------', 
+                    encoding='utf-8')
     
     print(df)
     
