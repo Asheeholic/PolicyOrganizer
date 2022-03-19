@@ -1,8 +1,6 @@
 import os
-from time import sleep
-from flask import Flask, escape, request, render_template, send_file
+from flask import send_file
 from werkzeug.utils import secure_filename
-import pandas as pd
 
 from applications.analyzeTest import analyze_txt
 
