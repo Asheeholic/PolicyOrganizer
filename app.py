@@ -17,7 +17,8 @@ def hello_world():
 def file_upload():
     file = request.files['file']
     loadTest.test(file)
-    return loadTest.download_test(file) # 리턴해야 파일을 줌..
+    #return loadTest.download_test(file) # 리턴해야 파일을 줌..
+    return render_template('index.html')
 
 if __name__=="__main__":
     app.run()

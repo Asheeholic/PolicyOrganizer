@@ -13,6 +13,6 @@ def analyze_txt(filename, upload_path):
                     sep='------------------------------------------------------------', 
                     encoding='utf-8')
     
-    print(df)
+    print(df.get)
     
-    df.to_excel(f'{upload_path}{filename}.xlsx',index=True)
+    df.to_excel(f'{upload_path}{filename}.xlsx',index=False, engine='openpyxl')
