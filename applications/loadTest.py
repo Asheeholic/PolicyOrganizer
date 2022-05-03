@@ -6,10 +6,10 @@ from applications.analyzeTest import analyze_txt
 
 upload_path = './uploads/'
 
-def test(file):
+async def test(file):
     filename = secure_filename(file.filename)
     upload_test(file, filename)
-    analyze_txt(filename, upload_path)
+    await analyze_txt(filename, upload_path)
 
 # 파일 업로드
 def upload_test(file, filename):

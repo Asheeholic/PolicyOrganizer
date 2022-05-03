@@ -14,12 +14,13 @@ def hello_world():
     return render_template('index.html')
 
 @app.route('/fileupload', methods=['GET', 'POST'])
-def file_upload():
+async def file_upload():
     file = request.files['file']
-    loadTest.test(file)
+    await loadTest.test(file)
     return loadTest.download_test(file) # 리턴해야 파일을 줌..
     #return render_template('index.html')
 
 if __name__=="__main__":
     app.run()
 
+## 파일 크기가 크면 다운 실패함
