@@ -5,7 +5,7 @@ import pandas as pd
 
 # https://rfriend.tistory.com/250
 # txt 분석
-async def analyze_txt(filename, upload_path):
+def analyze_txt(filename, upload_path):
     
     print('analyze Test!!')
     # test
@@ -31,8 +31,7 @@ async def analyze_txt(filename, upload_path):
             if len(divided_of_source) == 2 :
                 df.iloc[i, 0] = divided_of_source[0]
                 df.iloc[i, 1] = divided_of_source[1]
-        
-        sleep(3)
+                
     except:
         print('Error Occur!! ')
     
