@@ -5,21 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="/static/css/bootstrap-theme.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Hello, World~!</h1>
-    <form class="fileUpload" action="http://localhost:5000/fileupload" method="POST"
-          enctype="multipart/form-data">
-        <input type="file" name="file" />
-        <button type="button" onclick="redirect()">확인</button>
-    </form>
+    <div>
+        <div>
+            <h1>Hello, World~!</h1>
+        </div>
+        <div>
+            <form class="fileUpload" action="http://localhost:5000/fileupload" method="POST"
+                  enctype="multipart/form-data">
+                <input type="file" name="file" />
+                <button type="button" onclick="active()">확인</button>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
     <script>
-        function redirect() {
+        function active() {
             document.getElementsByClassName("fileUpload")[0].submit();
-            // console.log("test");
+            console.log("test 1");
             // setTimeout(function() {
             //     history.go(0);
             // }, 2000)
+        }
+
+        function fileCheck(filename) {
+            $.ajax({
+                type: "GET",
+                url: "/filecheck",
+                data : {filename : filename},
+                success : function (responce) {
+                    let json = JSON.parse(responce);
+                    console.log(json.result)
+                },
+                error : function() {
+                    alert("Post 실패!")
+                }
+            })
         }
     </script>
 </body>

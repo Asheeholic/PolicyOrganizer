@@ -12,7 +12,7 @@ def analyze_txt(filename, upload_path):
     df = pd.read_csv(f'{upload_path}{filename}', 
                     sep='------------------------------------------------------------', 
                     encoding='utf-8',
-                    header=None, names=['a','b','c','d','f','g','h','i'])
+                    header=None, names=['a','b'])
     
     print('Before Changing!')
     print(df)
