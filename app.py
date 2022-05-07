@@ -19,11 +19,16 @@ def hello_world():
 def file_upload():
     file = request.files['file']
     loadFile.process(file)
-    # return render_template('index.html')
+    result = {'result' : 'uploading and checking'}
+    return jsonify(result)
 
-@app.route('/filecheck/<filename>', methods=['GET'])
-def file_check(filename):
-    result = {'result' : fileCheck.check_file(filename)}
+# get = request.args["number"]
+# post = request.form["file"]
+@app.route('/filecheck', methods=['POST'])
+def file_check(): 
+    filename = request.form["fileNameInput"]
+    check_result = fileCheck.check_file(filename)
+    result = {'result' : check_result}
     return jsonify(result)
 
 @app.route('/filedownload', methods=['GET', 'POST'])
@@ -33,5 +38,3 @@ def file_download():
 
 if __name__=="__main__":
     app.run()
-
-## 파일 크기가 크면 다운 실패함

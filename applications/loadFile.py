@@ -20,6 +20,9 @@ def upload_file(file, filename):
     os.makedirs(upload_path, exist_ok=True)
     file.save(os.path.join(upload_path, filename))
 
+# 파일 업로드 자체 체크 필수
+# https://ash84.io/2018/09/10/flask-upload-limit/
+
 #파일 다운로드
 def download_file(file):
     print('download Test!!')

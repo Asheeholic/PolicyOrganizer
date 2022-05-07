@@ -13,40 +13,18 @@
             <h1>Hello, World~!</h1>
         </div>
         <div>
-            <form class="fileUpload" action="http://localhost:5000/fileupload" method="POST"
-                  enctype="multipart/form-data">
-                <input type="file" name="file" />
+            <form class="fileUploadForm" enctype="multipart/form-data">
+                <input class="inputFile" type="file" name="file" />
                 <button type="button" onclick="active()">확인</button>
             </form>
         </div>
+        <!-- <form class="fileUploadForm" action="http://localhost:5000/fileupload" method="POST"
+                  enctype="multipart/form-data"> -->
     </div>
 
 
     <script src="/static/js/jquery.min.js"></script>
     <script src="/static/js/bootstrap.min.js"></script>
-    <script>
-        function active() {
-            document.getElementsByClassName("fileUpload")[0].submit();
-            console.log("test 1");
-            // setTimeout(function() {
-            //     history.go(0);
-            // }, 2000)
-        }
-
-        function fileCheck(filename) {
-            $.ajax({
-                type: "GET",
-                url: "/filecheck",
-                data : {filename : filename},
-                success : function (responce) {
-                    let json = JSON.parse(responce);
-                    console.log(json.result)
-                },
-                error : function() {
-                    alert("Post 실패!")
-                }
-            })
-        }
-    </script>
+    <script src="/static/myjs/index.js"></script>
 </body>
 </html>
