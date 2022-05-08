@@ -8,6 +8,7 @@ import applications.fileCheck as fileCheck
 
 # app 구성
 app = Flask(__name__)
+app.config['JSON_AS_ASCII'] = False
 
 #d ctrl + f5 시작
 
@@ -18,12 +19,11 @@ def hello_world():
 @app.route('/fileupload', methods=['GET', 'POST'])
 def file_upload():
     file = request.files['file']
-    loadFile.process(file)
-    result = {'result' : 'uploading and checking'}
+    result = {'result' : loadFile.process(file)}
     return jsonify(result)
 
-# get = request.args["number"]
-# post = request.form["file"]
+# get = request.args["number"] number = name
+# post = request.form["file"] file = name
 @app.route('/filecheck', methods=['POST'])
 def file_check(): 
     filename = request.form["fileNameInput"]
