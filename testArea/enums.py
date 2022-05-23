@@ -15,9 +15,12 @@ SUBJECT = [
     'Residence', # storage unit
     'Volume Pool',
     'Use Accelerator',
-    'HW/OS/Client',
-    
-    'Include', # Backup Selection
+    # 'HW/OS/Client',
+    'HW',
+    'OS',
+    'Client',
+
+    'Backup_Selection', # Backup Selection
 
     'Schedule'
 

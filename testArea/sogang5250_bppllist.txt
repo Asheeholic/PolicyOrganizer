@@ -4952,6 +4952,11 @@ Policy Name:       SYMC_NBA_Dedupe_Catalog_nb5250
   Ignore Client Direct:  no
   Use Accelerator:  no
   HW/OS/Client:  5250          NetBackup-App nb5250
+                   HYPER-V       Virtual_Machi ACETQM.SGU.Local
+                 HYPER-V       Virtual_Machi 1-115-tax-prd.SGU.Local
+                 HYPER-V       Virtual_Machi 223-oztest-new.SGU.Local
+                 HYPER-V       Virtual_Machi 1-018-job.SGU.Local
+                 HYPER-V       Virtual_Machi 224-ozprd-new.SGU.Local
 
   Include:  /msdp/data/dp1/pdvol/catalogshadow
             /msdp/cat/databases/datacheck
