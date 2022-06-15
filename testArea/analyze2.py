@@ -153,8 +153,8 @@ def analyze_txt(filename, upload_path):
                                 
                                 # 없으면 행을 더 추가하는 식으로 하기
                                 except:
-                                    print(policy_name)
-                                    print(source_of_include)
+                                    # print(policy_name)
+                                    # print(source_of_include)
                                     add_data = { 'Backup_Selection' : source_of_include }
                                     add_data_list.append(add_data)
 
@@ -216,3 +216,18 @@ def analyze_txt(filename, upload_path):
 # file = open('c:/git/PolicyOrganizer/testArea/policies.txt')
 file = open('c:/git/PolicyOrganizer/testArea/sogang5250_bppllist.txt')
 analyze_txt(file.name, '')
+
+# 정책명
+# 스케줄
+# 백업 셀렉션
+# 클라이언트
+
+# 하드웨어 필요 없음
+# OS
+
+# 스토리지유닛
+# 볼륨풀
+
+# 엑셀러레이터 (없는게 나을 수 있음)
+
+# (none defined) 뜨면 ""
